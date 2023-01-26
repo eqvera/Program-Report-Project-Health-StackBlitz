@@ -55,7 +55,9 @@ const columns: ColumnsType<DataType> = [
     dataIndex: 'supplyHealthPct',
     render: (_, { supplyHealthPct }) => (
       <>
-        <Progress percent={supplyHealthPct} showInfo={false} />
+        <Progress percent={100} strokeColor={{ '0%': '#4bd19c', '40%': '#4bd19c', '40.001%': '#f79b00', '60%': '#f79b00', '60.001%': '#e92420', '80%': '#e92420', '80.001%':'#d2d2d2', '100%': '#d2d2d2' }} showInfo={false}/>
+        <Progress percent={60} steps={10} strokeColor={["green", "red"]} />
+        <Progress percent={supplyHealthPct} success={{percent:20, strokeColor: "red"}} showInfo={false} />
         {supplyHealthPct}% on time
       </>
     ),
